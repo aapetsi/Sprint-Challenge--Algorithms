@@ -98,18 +98,22 @@ class SortingRobot:
         """
         Sort the robot's list.
         """
-        for x in range(90):
-            for x in range(90):
-                self.swap_item()
-                self.move_right()
-                if self.compare_item() == -1:
-                    self.move_left()
-                    self.swap_item()
-                    self.move_right()
-                elif self.compare_item() == 1:
-                    self.swap_item()
-                    self.move_left()
-                    self.swap_item()
+       '''
+        1. check if we can move right or left
+        if can move right
+            pick up item
+            if can move forward
+                move forward to compare to current item
+                compare picked up item to current moved to item
+                if compared picked item is greater than current item
+                    swap current item with picked item
+                    move left
+                    swap item
+                else
+                    move left
+                    swap item
+
+       '''
         
         
 
