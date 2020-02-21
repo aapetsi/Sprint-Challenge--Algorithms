@@ -99,27 +99,16 @@ class SortingRobot:
         while self.light_is_on():
             # pick up an item
             self.swap_item()
-            # while robot can move to right
             while self.can_move_right():
-                # move to the right
                 self.move_right()
-                # if the item in front of robot is lower than picked up item
                 if self.compare_item() == 1:
-                    # pick that lower value item
                     self.swap_item()
-            # while robot can move left and it doesnt find the None
             while self.can_move_left() and self.compare_item() is not None:
-                # move left until it finds None
                 self.move_left()
-            # swap None with the current item in hold
             self.swap_item()
-            # if robot can still move right
             if self.can_move_right() is True:
-                # move to the right
                 self.move_right()
-                # will continue looping
             else:
-                # stop looping cause reached end of array and its sorted
                 self.set_light_off()
 
 
@@ -127,7 +116,7 @@ if __name__ == "__main__":
     # Test our your implementation from the command line
     # with `python robot_sort.py`
 
-    l = [15, 41, 58, 98, 11, 9]
-    robot = sorted(SortingRobot(l))
+    arr = [15, 41, 58, 98, 11, 9]
+    robot = sorted(SortingRobot(arr))
 
     print(robot._list)
